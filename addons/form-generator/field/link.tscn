@@ -1,0 +1,6 @@
+[gd_scene format=2]
+
+[node name="LinkButton" type="LinkButton"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "un lien bouton"

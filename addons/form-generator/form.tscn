@@ -1,0 +1,44 @@
+[gd_scene format=2]
+
+[node name="Form" type="VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Content" type="VBoxContainer" parent="."]
+margin_right = 238.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_top = 4.0
+margin_right = 238.0
+margin_bottom = 24.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer"]
+margin_right = 178.0
+margin_bottom = 20.0
+
+[node name="Button" type="Button" parent="HBoxContainer/HBoxContainer2"]
+margin_right = 48.0
+margin_bottom = 20.0
+text = "Reset"
+
+[node name="Button2" type="Button" parent="HBoxContainer/HBoxContainer2"]
+margin_left = 52.0
+margin_right = 178.0
+margin_bottom = 20.0
+text = "Ajouter un champ"
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+margin_left = 182.0
+margin_right = 238.0
+margin_bottom = 20.0
+text = "Valider"
+
+[node name="OptionButton" type="OptionButton" parent="."]
+visible = false
+margin_top = 28.0
+margin_right = 238.0
+margin_bottom = 48.0
+text = "Choisir un type de champ"

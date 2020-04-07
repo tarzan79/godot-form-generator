@@ -1,0 +1,35 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "HBoxContainer",
+"class": "FieldInput",
+"language": "GDScript",
+"path": "res://addons/form-generator/field/input.gd"
+}, {
+"base": "Node",
+"class": "Form",
+"language": "GDScript",
+"path": "res://addons/form-generator/form.gd"
+} ]
+_global_script_class_icons={
+"FieldInput": "",
+"Form": ""
+}
+
+[application]
+
+config/name="Godot-form-generator"
+run/main_scene="res://test/test.tscn"
+config/icon="res://icon.png"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
