@@ -27,6 +27,10 @@ func init(data):
         $Label.text = data.label
     if data.has("value"):
         $LineEdit.text = data.value
+    if data.has("schema"):
+        if data.schema.has("readOnly"):
+            $LineEdit.editable = false
+            pass
 
 func validate(data):
     var result = regex.search(data)

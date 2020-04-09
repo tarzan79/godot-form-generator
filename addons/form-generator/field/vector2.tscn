@@ -1,8 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://addons/form-generator/x.png" type="Texture" id=1]
-[ext_resource path="res://addons/form-generator/y.png" type="Texture" id=2]
+[ext_resource path="res://addons/form-generator/theme/x.png" type="Texture" id=1]
+[ext_resource path="res://addons/form-generator/theme/y.png" type="Texture" id=2]
 [ext_resource path="res://addons/form-generator/field/vector2.gd" type="Script" id=3]
+
+
 
 [node name="VBoxContainer" type="HBoxContainer"]
 margin_right = 304.0

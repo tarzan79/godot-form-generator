@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/y.png-31eb750ed6d8ce2a73d8bbd83de3bf6b.stex"
+path="res://.import/y.png-e2cb61c03fcd36980112376849b0f1c3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/form-generator/y.png"
-dest_files=[ "res://.import/y.png-31eb750ed6d8ce2a73d8bbd83de3bf6b.stex" ]
+source_file="res://addons/form-generator/theme/y.png"
+dest_files=[ "res://.import/y.png-e2cb61c03fcd36980112376849b0f1c3.stex" ]
 
 [params]
 

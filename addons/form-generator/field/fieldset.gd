@@ -1,22 +1,22 @@
 extends PanelContainer
 
 var value = {} setget _set_value, _get_value
-onready var label = $VBoxContainer2/Label.text
+onready var label = $VBoxContainer/Label.text
 
 func _ready():
     pass
     
 func init(data):
     if data.has("editor"):
-        $VBoxContainer2/Button.hide()
+        $VBoxContainer/Button.hide()
     if data.has("label"):
-        $VBoxContainer2/Label.text = data.label
+        $VBoxContainer/Label.text = data.label
 
 func _set_value(data):
     value = data
     
 func _get_value():
-    return _get_data($VBoxContainer2/VBoxContainer)
+    return _get_data($VBoxContainer/VBoxContainer)
 
 func _get_data(node):
     var res = {}

@@ -1,44 +1,77 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/form-generator/theme/OpenSans-Bold.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 21
+outline_size = 3
+outline_color = Color( 0.447059, 0.176471, 0.176471, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends OptionButton
+
+#string
+#int
+#color
+#vector2
+#vector3
+#dictionnary
+#array
+func _ready():
+    add_item(\"string\", TYPE_STRING)
+    add_item(\"int\", TYPE_INT)
+    add_item(\"color\", TYPE_COLOR)
+    add_item(\"vector2\", TYPE_VECTOR2)
+    add_item(\"vector3\", TYPE_VECTOR3)
+    add_item(\"dictionnary\", TYPE_DICTIONARY)
+    add_item(\"array\", TYPE_ARRAY)
+"
 
 [node name="Form" type="VBoxContainer"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 238.0
+margin_bottom = 90.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="."]
+margin_right = 307.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 20 )
+custom_fonts/font = SubResource( 1 )
+text = "Nom du formulaire"
+
+[node name="HSeparator" type="HSeparator" parent="."]
+margin_top = 34.0
+margin_right = 307.0
+margin_bottom = 38.0
+
 [node name="Content" type="VBoxContainer" parent="."]
-margin_right = 238.0
+margin_top = 42.0
+margin_right = 307.0
+margin_bottom = 42.0
+custom_constants/separation = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_top = 4.0
-margin_right = 238.0
-margin_bottom = 24.0
+margin_top = 46.0
+margin_right = 307.0
+margin_bottom = 66.0
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer"]
-margin_right = 178.0
-margin_bottom = 20.0
-
-[node name="Button" type="Button" parent="HBoxContainer/HBoxContainer2"]
+[node name="Button" type="Button" parent="HBoxContainer"]
 margin_right = 48.0
 margin_bottom = 20.0
 text = "Reset"
 
-[node name="Button2" type="Button" parent="HBoxContainer/HBoxContainer2"]
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer"]
 margin_left = 52.0
-margin_right = 178.0
+margin_right = 177.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 125, 0 )
+script = SubResource( 2 )
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+margin_left = 181.0
+margin_right = 307.0
 margin_bottom = 20.0
 text = "Ajouter un champ"
-
-[node name="Button3" type="Button" parent="HBoxContainer"]
-margin_left = 182.0
-margin_right = 238.0
-margin_bottom = 20.0
-text = "Valider"
-
-[node name="OptionButton" type="OptionButton" parent="."]
-visible = false
-margin_top = 28.0
-margin_right = 238.0
-margin_bottom = 48.0
-text = "Choisir un type de champ"

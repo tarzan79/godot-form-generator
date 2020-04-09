@@ -14,14 +14,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/form-generator/field/input.gd"
 }, {
-"base": "Node",
+"base": "PanelContainer",
 "class": "Form",
 "language": "GDScript",
 "path": "res://addons/form-generator/form.gd"
+}, {
+"base": "Reference",
+"class": "Truc",
+"language": "GDScript",
+"path": "res://test/truc.gd"
 } ]
 _global_script_class_icons={
 "FieldInput": "",
-"Form": ""
+"Form": "",
+"Truc": ""
 }
 
 [application]
@@ -29,6 +35,10 @@ _global_script_class_icons={
 config/name="Godot-form-generator"
 run/main_scene="res://test/test.tscn"
 config/icon="res://icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "form-generator" )
 
 [rendering]
 

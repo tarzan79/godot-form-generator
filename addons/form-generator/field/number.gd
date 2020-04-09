@@ -16,3 +16,7 @@ func init(data):
     else:
         spinbox.step = 0.1
         spinbox.rounded = false
+    if data.has("schema"):
+        if data.schema.has("readOnly"):
+            $SpinBox.editable = false
+            pass
