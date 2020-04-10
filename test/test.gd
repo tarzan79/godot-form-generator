@@ -1,6 +1,9 @@
 extends Node
 
+enum Named {THING_1, THING_2, ANOTHER_THING = -1}
+
 func _ready():
+    print(typeof(Named))
     test_from_schema()
 
 func submit(data):
@@ -116,11 +119,11 @@ func test_from_schema():
     formulaire.init({
         "name": "un joli formulaire",
         "node": self, #where generate the form
-        "editor": false, #if mode editor is active
+        "editor": true, #if mode editor is active
         "function": "submit" #function executed for submit
         })
     formulaire.from_schema(exemple_schema)
-#
+
 #func test_from_data():
 #    var formulaire = Form.new()
 #    add_child(formulaire)

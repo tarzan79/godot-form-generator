@@ -2,13 +2,16 @@ extends HBoxContainer
 
 class_name FieldInput
 
-var regex = RegEx.new()
-var type
 onready var value = $LineEdit.text
 onready var label = $Label.text
-#text, url, tel, password, email
+var regex = RegEx.new()
+var type
+var editor = false setget _set_editor
 
+#text, url, tel, password, email
 func init(data):
+    $Control.hide()
+    $Control/PanelContainer/VBoxContainer/Button.connect("pressed", self, "_hide_config")
     if data.has(type):
         match type:
             "text":
@@ -31,6 +34,9 @@ func init(data):
         if data.schema.has("readOnly"):
             $LineEdit.editable = false
             pass
+    if data.has("editor"):
+        _set_editor(data.editor)
+        
 
 func validate(data):
     var result = regex.search(data)
@@ -39,5 +45,17 @@ func validate(data):
     else:
         print("pas trouvé")
     
-    
-    
+func _set_editor(val):
+    editor = val
+    if editor == true:
+        $EditButton.show()
+        $EditButton.connect("pressed", self, "_show_config")
+    elif editor == false:
+        $EditButton.hide()
+        $EditButton.disconnect("pressed", self, "_show_config")
+        
+func _show_config():
+    $Control.show()
+
+func _hide_config():
+    $Control.hide()

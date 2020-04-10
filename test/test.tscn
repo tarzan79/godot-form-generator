@@ -2,12 +2,9 @@
 
 [ext_resource path="res://test/test.gd" type="Script" id=2]
 
-[node name="Node" type="Control"]
-margin_left = 20.0
-margin_top = 20.0
-margin_right = 20.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 0, 0.169 )
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false

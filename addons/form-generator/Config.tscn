@@ -1,0 +1,51 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+margin_left = 349.0
+margin_right = 349.0
+margin_bottom = 24.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_left = -32.0
+margin_top = 9.0
+margin_right = 118.0
+margin_bottom = 105.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 143.0
+margin_bottom = 89.0
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+margin_right = 136.0
+margin_bottom = 14.0
+text = "Config"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 136.0
+margin_bottom = 22.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+margin_top = 26.0
+margin_right = 136.0
+margin_bottom = 26.0
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/VBoxContainer"]
+margin_top = 30.0
+margin_right = 136.0
+margin_bottom = 34.0
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer"]
+margin_top = 38.0
+margin_right = 136.0
+margin_bottom = 58.0
+text = "ok"

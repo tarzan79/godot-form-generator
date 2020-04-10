@@ -12,9 +12,6 @@ func _exit_tree():
     pass
     remove_custom_type("Form")
 
-func has_main_screen():
-   return true
-
 func get_plugin_name():
    return "Form generator"
 

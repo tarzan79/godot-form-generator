@@ -14,13 +14,9 @@ var form_node
 var function
 
 func _ready():
-    print("scene ready")
-    print(self.get_children())
-    var scene_instance = scene_form.instance()
+    scene_instance = scene_form.instance()
     add_child(scene_instance)
-    print(scene_instance.get_node("Content"))
     form_node = scene_instance.get_node("Content")
-    print("============")
     print(scene_instance)
     
 func init(data):
@@ -121,17 +117,18 @@ func generator_from_schema(node, data):
         var noeud
         print(i)
         print(data["properties"][i].type)
+        var obj = {"label": i, "schema": data["properties"][i], "editor": is_editor}
         match data["properties"][i].type:
             "string":
-                node.add_child(field.create_input({"label": i, "schema": data["properties"][i]}))#name, value
+                node.add_child(field.create_input(obj))#name, value
             "number":
-                node.add_child(field.create_number({"label": i, "schema": data["properties"][i]}))#name, value
+                node.add_child(field.create_number(obj))#name, value
             "integer":
-                node.add_child(field.create_number({"label": i, "schema": data["properties"][i]}))#name, value
+                node.add_child(field.create_number(obj))#name, value
             "array":
-                node.add_child(field.create_select({"label": i, "schema": data["properties"][i]}))#name, value
+                node.add_child(field.create_select(obj))#name, value
             "object":
-                var f = field.create_fieldset({"label": i, "schema": data["properties"][i]}) # name, value
+                var f = field.create_fieldset(obj) # name, value
                 node.add_child(f)#name, value
                 generator_from_schema(f.get_node("VBoxContainer/VBoxContainer"), data["properties"][i])
 #            "boolean":
@@ -140,7 +137,7 @@ func generator_from_schema(node, data):
 
 func _set_editor(value):
     is_editor = value
-    print("============ editor")
+    print("============")
     print(scene_instance)
     if is_editor == true:
         scene_instance.get_node("HBoxContainer").show()

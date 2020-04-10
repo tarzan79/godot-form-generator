@@ -29,8 +29,8 @@ func _ready():
 "
 
 [node name="Form" type="VBoxContainer"]
-margin_right = 238.0
-margin_bottom = 90.0
+margin_right = 307.0
+margin_bottom = 66.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

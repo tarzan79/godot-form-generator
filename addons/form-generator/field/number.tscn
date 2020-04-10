@@ -25,3 +25,132 @@ rect_min_size = Vector2( 130, 0 )
 max_value = 1e+12
 step = 0.1
 align = 2
+
+[node name="EditButton" type="Button" parent="."]
+margin_left = 288.0
+margin_right = 324.0
+margin_bottom = 24.0
+text = "Edit"
+
+[node name="Control" type="Node2D" parent="."]
+position = Vector2( 341.277, 10.5885 )
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+margin_left = 26.6132
+margin_top = 10.8907
+margin_right = 243.613
+margin_bottom = 206.891
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 210.0
+margin_bottom = 189.0
+
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer"]
+margin_right = 203.0
+margin_bottom = 14.0
+text = "Config"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="Control/PanelContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 203.0
+margin_bottom = 22.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+margin_top = 26.0
+margin_right = 203.0
+margin_bottom = 150.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer/VBoxContainer"]
+margin_right = 203.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_top = 5.0
+margin_right = 62.0
+margin_bottom = 19.0
+text = "Minimum"
+
+[node name="CheckBox" type="CheckBox" parent="Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 66.0
+margin_right = 90.0
+margin_bottom = 24.0
+
+[node name="LineEdit" type="SpinBox" parent="Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 94.0
+margin_right = 168.0
+margin_bottom = 24.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer/VBoxContainer"]
+margin_top = 28.0
+margin_right = 203.0
+margin_bottom = 52.0
+
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_top = 5.0
+margin_right = 64.0
+margin_bottom = 19.0
+text = "Maximum"
+
+[node name="CheckBox" type="CheckBox" parent="Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 68.0
+margin_right = 92.0
+margin_bottom = 24.0
+
+[node name="LineEdit" type="SpinBox" parent="Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 96.0
+margin_right = 170.0
+margin_bottom = 24.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer/VBoxContainer"]
+margin_top = 56.0
+margin_right = 203.0
+margin_bottom = 96.0
+
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_top = 13.0
+margin_right = 123.0
+margin_bottom = 27.0
+text = "ExclusiveMaximum"
+
+[node name="CheckButton" type="CheckButton" parent="Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 127.0
+margin_right = 203.0
+margin_bottom = 40.0
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer/VBoxContainer"]
+margin_top = 100.0
+margin_right = 203.0
+margin_bottom = 124.0
+
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer4"]
+margin_top = 5.0
+margin_right = 72.0
+margin_bottom = 19.0
+text = "Multiple Of"
+
+[node name="CheckBox" type="CheckBox" parent="Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer4"]
+margin_left = 76.0
+margin_right = 100.0
+margin_bottom = 24.0
+
+[node name="LineEdit" type="SpinBox" parent="Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer4"]
+margin_left = 104.0
+margin_right = 178.0
+margin_bottom = 24.0
+
+[node name="HSeparator2" type="HSeparator" parent="Control/PanelContainer/VBoxContainer"]
+margin_top = 154.0
+margin_right = 203.0
+margin_bottom = 158.0
+
+[node name="Button" type="Button" parent="Control/PanelContainer/VBoxContainer"]
+margin_top = 162.0
+margin_right = 203.0
+margin_bottom = 182.0
+text = "ok"
