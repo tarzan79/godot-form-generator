@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/form-generator/script/field/input.gd" type="Script" id=1]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+margin_right = 349.0
+margin_bottom = 24.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 5.0
+margin_right = 150.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 150, 0 )
+text = "un champ"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 154.0
+margin_right = 304.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 150, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EditButton" type="Button" parent="."]
+margin_left = 308.0
+margin_right = 345.0
+margin_bottom = 24.0
+text = "edit"
+[connection signal="text_changed" from="LineEdit" to="." method="validate"]

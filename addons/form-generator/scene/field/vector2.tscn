@@ -1,32 +1,33 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://addons/form-generator/theme/x.png" type="Texture" id=1]
 [ext_resource path="res://addons/form-generator/theme/y.png" type="Texture" id=2]
-[ext_resource path="res://addons/form-generator/theme/z.png" type="Texture" id=3]
-[ext_resource path="res://addons/form-generator/field/vector3.gd" type="Script" id=4]
+[ext_resource path="res://addons/form-generator/script/field/vector2.gd" type="Script" id=3]
+
 
 
 
 
 [node name="VBoxContainer" type="HBoxContainer"]
 margin_right = 304.0
-margin_bottom = 83.0
-script = ExtResource( 4 )
+margin_bottom = 54.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="."]
-margin_top = 34.0
+margin_top = 20.0
 margin_right = 150.0
-margin_bottom = 48.0
+margin_bottom = 34.0
 rect_min_size = Vector2( 150, 0 )
-text = "vector3"
+text = "vector2"
+valign = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 154.0
 margin_right = 354.0
-margin_bottom = 83.0
+margin_bottom = 54.0
 
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
 margin_right = 200.0
@@ -39,9 +40,3 @@ margin_top = 29.0
 margin_right = 200.0
 margin_bottom = 54.0
 right_icon = ExtResource( 2 )
-
-[node name="LineEdit3" type="LineEdit" parent="VBoxContainer"]
-margin_top = 58.0
-margin_right = 200.0
-margin_bottom = 83.0
-right_icon = ExtResource( 3 )

@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/form-generator/script/field/number.gd" type="Script" id=1]
+[ext_resource path="res://addons/form-generator/scene/config/number_config.tscn" type="PackedScene" id=2]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+margin_right = 136.0
+margin_bottom = 24.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 5.0
+margin_right = 150.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 150, 0 )
+text = "Number"
+
+[node name="SpinBox" type="SpinBox" parent="."]
+margin_left = 154.0
+margin_right = 284.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 130, 0 )
+max_value = 1e+12
+step = 1.0
+align = 2
+
+[node name="EditButton" type="Button" parent="."]
+margin_left = 288.0
+margin_right = 324.0
+margin_bottom = 24.0
+text = "Edit"
+
+[node name="Control" type="Node2D" parent="."]
+position = Vector2( 341.277, 10.5885 )
+
+[node name="PanelContainer" parent="Control" instance=ExtResource( 2 )]

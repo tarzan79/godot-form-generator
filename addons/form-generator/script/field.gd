@@ -3,20 +3,20 @@ extends Resource
 #pour un input, on definira le type plus tard
 #il y a deja un hidden sur les node, donc on le gere comme ca
 #bouton radio, range
-var ClassButton = load("res://addons/form-generator/field/button.tscn")
-var ClassCheckBox = load("res://addons/form-generator/field/checkbox.tscn")
-var ClassColorPicker = load("res://addons/form-generator/field/colorPicker.tscn")
-var ClassDate = load("res://addons/form-generator/field/date.tscn")
-var ClassFile = load("res://addons/form-generator/field/file.tscn")
-var ClassImage = load("res://addons/form-generator/field/image.tscn")
-var ClassInput = load("res://addons/form-generator/field/input.tscn")
-var ClassLabel = load("res://addons/form-generator/field/label.tscn")
-var ClassLink = load("res://addons/form-generator/field/link.tscn")
-var ClassSelect = load("res://addons/form-generator/field/select.tscn")
-var ClassNumber = load("res://addons/form-generator/field/number.tscn")
-var ClassFieldset = load("res://addons/form-generator/field/fieldset.tscn")
-var ClassVector2 = load("res://addons/form-generator/field/vector2.tscn")
-var ClassVector3 = load("res://addons/form-generator/field/vector3.tscn")
+var ClassButton = load("res://addons/form-generator/scene/button.tscn")
+var ClassCheckBox = load("res://addons/form-generator/scene/field/checkbox.tscn")
+var ClassColorPicker = load("res://addons/form-generator/scene/field/colorPicker.tscn")
+var ClassDate = load("res://addons/form-generator/scene/field/date.tscn")
+var ClassFile = load("res://addons/form-generator/scene/field/file.tscn")
+var ClassImage = load("res://addons/form-generator/scene/field/image.tscn")
+var ClassInput = load("res://addons/form-generator/scene/field/input.tscn")
+var ClassLabel = load("res://addons/form-generator/scene/label.tscn")
+var ClassLink = load("res://addons/form-generator/scene/link.tscn")
+var ClassSelect = load("res://addons/form-generator/scene/field/select.tscn")
+var ClassNumber = load("res://addons/form-generator/scene/field/number.tscn")
+var ClassFieldset = load("res://addons/form-generator/scene/fieldset.tscn")
+var ClassVector2 = load("res://addons/form-generator/scene/field/vector2.tscn")
+var ClassVector3 = load("res://addons/form-generator/scene/field/vector3.tscn")
 
 func _init():
     pass

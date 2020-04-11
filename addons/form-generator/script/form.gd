@@ -5,8 +5,9 @@ class_name Form
 export var form_data = []
 #onready var label = $Form/Label.text
 
-var field = load("res://addons/form-generator/field.gd").new()
-var scene_form = load("res://addons/form-generator/form.tscn")
+var field = load("res://addons/form-generator/script/field.gd").new()
+var scene_form = load("res://addons/form-generator/scene/form.tscn")
+onready var btn_submit = $Submit
 var scene_instance
 var is_editor = false setget _set_editor, _get_editor
 var node_origin
@@ -18,6 +19,7 @@ func _ready():
     add_child(scene_instance)
     form_node = scene_instance.get_node("Content")
     print(scene_instance)
+    scene_instance.get_node("Submit").connect("pressed", self, "_submit")
     
 func init(data):
     if !data.has("node"):
@@ -33,23 +35,16 @@ func init(data):
     function = data.function
     node_origin = data.node
 
+#les 3 fonctions suivante sont la a cause du coté recursif des fonctions
 func from_data(data):
     generator_from_data(form_node, data)
-    var ok = field.create_button({
-        "type": "submit",
-        "value": "envoyer"
-       })
-    ok.connect("pressed", self, "_submit")
-    form_node.add_child(ok)
-    
+
 func from_schema(data):
     generator_from_schema(form_node, data)
-    var ok = field.create_button({
-        "type": "submit",
-        "value": "envoyer"
-       })
-    ok.connect("pressed", self, "_submit")
-    form_node.add_child(ok)
+
+func from_resource(data):
+    print("from resource")
+    generator_from_resource(form_node, data)
 
 func _reset():
     _reset_data(form_node)
@@ -92,6 +87,9 @@ func generator_from_data(node, data):
                 node.add_child(field.create_input(obj))#name, value
             TYPE_INT:
                 node.add_child(field.create_number(obj))#name, value
+            TYPE_REAL:
+                obj["rounded"] = false
+                node.add_child(field.create_number(obj))#name, value
             TYPE_COLOR:
                 node.add_child(field.create_color(obj))#name, value
                 pass
@@ -133,7 +131,36 @@ func generator_from_schema(node, data):
                 generator_from_schema(f.get_node("VBoxContainer/VBoxContainer"), data["properties"][i])
 #            "boolean":
 #                pass
+func generator_from_resource(node, data):
+    print("generate from resource")
+    form_data = []
+    for i in data.get_property_list():
         
+        if i["usage"] >= PROPERTY_USAGE_SCRIPT_VARIABLE:
+            print(i)
+            var obj = {"label": i["name"], "value": data.get(i["name"]), "editor": is_editor}
+            match i["type"]:
+                TYPE_STRING:
+                    node.add_child(field.create_input(obj))#name, value
+                TYPE_INT:
+                    node.add_child(field.create_number(obj))#name, value
+                TYPE_REAL:
+                    obj["rounded"] = false
+                    node.add_child(field.create_number(obj))#name, value
+                TYPE_COLOR:
+                    node.add_child(field.create_color(obj))#name, value
+                    pass
+                TYPE_VECTOR2:
+                    node.add_child(field.create_vector2(obj))#name, value
+                TYPE_VECTOR3:
+                    node.add_child(field.create_vector3(obj))#name, value
+                TYPE_DICTIONARY:
+                    var f = field.create_fieldset(obj)
+                    node.add_child(f)#name, value
+                    generator_from_data(f.get_node("VBoxContainer/VBoxContainer"), data[i])
+                TYPE_ARRAY:
+                    node.add_child(field.create_select(obj))#name, value
+                _: print("je connais pas ce truc")         
 
 func _set_editor(value):
     is_editor = value

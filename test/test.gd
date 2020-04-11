@@ -1,10 +1,13 @@
 extends Node
 
 enum Named {THING_1, THING_2, ANOTHER_THING = -1}
+var class_truc = load("res://test/truc.gd")
 
 func _ready():
     print(typeof(Named))
-    test_from_schema()
+    test_from_resource()
+#    test_from_schema()
+    
 
 func submit(data):
     print(data)
@@ -124,24 +127,39 @@ func test_from_schema():
         })
     formulaire.from_schema(exemple_schema)
 
-#func test_from_data():
-#    var formulaire = Form.new()
-#    add_child(formulaire)
-#    formulaire.init({
-#        "name": "un joli formulaire",
-#        "node": self, #where generate the form
-#        "editor": false, #if mode editor is active
-#        "function": "submit" #function executed for submit
-#        })
-#    formulaire.from_data({
-#        "pseudo": "grognon",
-#        "age": 18,
-#        "un vecteur": Vector2(0, 3),
-#        "un autre vecteur": Vector3(0, 3, 5),
-#        "couleur": Color(0,1,1),
-#        "un truc": ["uiuiui", "popopop", "fufufu"],
-#        "un objet": {
-#            "name": "je sais pas quoi mettre",
-#            "date": "01/01/1000"
-#            }
-#        })
+func test_from_data():
+    var formulaire = Form.new()
+    add_child(formulaire)
+    formulaire.init({
+        "name": "un joli formulaire",
+        "node": self, #where generate the form
+        "editor": false, #if mode editor is active
+        "function": "submit" #function executed for submit
+        })
+    formulaire.from_data({
+        "pseudo": "grognon",
+        "age": 18,
+        "un vecteur": Vector2(0, 3),
+        "un autre vecteur": Vector3(0, 3, 5),
+        "couleur": Color(0,1,1),
+        "un truc": ["uiuiui", "popopop", "fufufu"],
+        "un objet": {
+            "name": "je sais pas quoi mettre",
+            "date": "01/01/1000"
+            }
+        })
+
+#     var item = class_truc.new(1)
+
+
+func test_from_resource():
+    var formulaire = Form.new()
+    add_child(formulaire)
+    var item = class_truc.new(1)
+    formulaire.init({
+        "name": "un joli formulaire",
+        "node": self, #where generate the form
+        "editor": false, #if mode editor is active
+        "function": "submit" #function executed for submit
+        })
+    formulaire.from_resource(item)

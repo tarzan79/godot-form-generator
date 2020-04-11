@@ -2,16 +2,30 @@ extends HBoxContainer
 
 class_name FieldInput
 
+var input_config_scene = load("res://addons/form-generator/scene/config/input_config.tscn")
 onready var value = $LineEdit.text
 onready var label = $Label.text
+var input_config_instance
 var regex = RegEx.new()
 var type
 var editor = false setget _set_editor
 
+var pattern = {
+    "active": false,
+    "value": ""
+   }
+var min_length = {
+    "active": false,
+    "value": 0
+   }
+var max_length = {
+    "active": false,
+    "value": 0
+   }
+
+
 #text, url, tel, password, email
 func init(data):
-    $Control.hide()
-    $Control/PanelContainer/VBoxContainer/Button.connect("pressed", self, "_hide_config")
     if data.has(type):
         match type:
             "text":
@@ -44,7 +58,7 @@ func validate(data):
         print(result.get_string())
     else:
         print("pas trouvé")
-    
+
 func _set_editor(val):
     editor = val
     if editor == true:
@@ -55,7 +69,10 @@ func _set_editor(val):
         $EditButton.disconnect("pressed", self, "_show_config")
         
 func _show_config():
-    $Control.show()
+    input_config_instance = input_config_scene.instance()
+    input_config_instance.get_node("VBoxContainer/Button").connect("pressed", self, "_hide_config")
+    input_config_instance.rect_position = $EditButton.rect_position - Vector2(150, 0)
+    get_parent().get_parent().get_node("Popup").add_child(input_config_instance)
 
 func _hide_config():
-    $Control.hide()
+    input_config_instance.queue_free()

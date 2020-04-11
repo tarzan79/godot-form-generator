@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "HBoxContainer",
 "class": "FieldInput",
 "language": "GDScript",
-"path": "res://addons/form-generator/field/input.gd"
+"path": "res://addons/form-generator/script/field/input.gd"
 }, {
 "base": "PanelContainer",
 "class": "Form",
 "language": "GDScript",
-"path": "res://addons/form-generator/form.gd"
+"path": "res://addons/form-generator/script/form.gd"
 }, {
 "base": "Reference",
 "class": "Truc",

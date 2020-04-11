@@ -29,14 +29,14 @@ func _ready():
 "
 
 [node name="Form" type="VBoxContainer"]
-margin_right = 307.0
-margin_bottom = 66.0
+margin_right = 350.0
+margin_bottom = 90.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="."]
-margin_right = 307.0
+margin_right = 350.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 0, 20 )
 custom_fonts/font = SubResource( 1 )
@@ -44,19 +44,25 @@ text = "Nom du formulaire"
 
 [node name="HSeparator" type="HSeparator" parent="."]
 margin_top = 34.0
-margin_right = 307.0
+margin_right = 350.0
 margin_bottom = 38.0
 
 [node name="Content" type="VBoxContainer" parent="."]
 margin_top = 42.0
-margin_right = 307.0
+margin_right = 350.0
 margin_bottom = 42.0
 custom_constants/separation = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="Submit" type="Button" parent="."]
 margin_top = 46.0
-margin_right = 307.0
+margin_right = 350.0
 margin_bottom = 66.0
+text = "valider"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_top = 70.0
+margin_right = 350.0
+margin_bottom = 90.0
 
 [node name="Button" type="Button" parent="HBoxContainer"]
 margin_right = 48.0
@@ -75,3 +81,5 @@ margin_left = 181.0
 margin_right = 307.0
 margin_bottom = 20.0
 text = "Ajouter un champ"
+
+[node name="Popup" type="Node2D" parent="."]

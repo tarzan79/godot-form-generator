@@ -15,11 +15,18 @@ func init(data):
         
     if data.has("value"):
         spinbox.value = data.value
+        if typeof(data.value) == TYPE_INT:
+            print("entier")
+            spinbox.step = 1
+            spinbox.rounded = true
+        if typeof(data.value) == TYPE_REAL:
+            print("float")
+            spinbox.step = 0.1
         
     if data.has("rounded") && data.rounded == true:
         spinbox.step = 1
         spinbox.rounded = true
-    else:
+    elif data.has("rounded") && data.rounded == false:
         spinbox.step = 0.1
         spinbox.rounded = false
         

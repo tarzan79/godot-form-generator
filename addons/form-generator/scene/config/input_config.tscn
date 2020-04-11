@@ -1,0 +1,119 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/form-generator/script/config/input_config.gd" type="Script" id=1]
+
+[node name="PanelContainer" type="PanelContainer"]
+margin_left = 43.8305
+margin_top = 8.22621
+margin_right = 319.831
+margin_bottom = 160.226
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 269.0
+margin_bottom = 145.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 262.0
+margin_bottom = 14.0
+mouse_filter = 0
+mouse_default_cursor_shape = 6
+text = "Config"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 262.0
+margin_bottom = 22.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 26.0
+margin_right = 262.0
+margin_bottom = 106.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+margin_right = 262.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_top = 5.0
+margin_right = 80.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 80, 0 )
+text = "Pattern"
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 84.0
+margin_right = 108.0
+margin_bottom = 24.0
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 112.0
+margin_right = 262.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+margin_top = 28.0
+margin_right = 262.0
+margin_bottom = 52.0
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_top = 5.0
+margin_right = 80.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 80, 0 )
+text = "MinLength"
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 84.0
+margin_right = 108.0
+margin_bottom = 24.0
+
+[node name="LineEdit" type="SpinBox" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 112.0
+margin_right = 262.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+margin_top = 56.0
+margin_right = 262.0
+margin_bottom = 80.0
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_top = 5.0
+margin_right = 80.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 80, 0 )
+text = "MaxLength"
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 84.0
+margin_right = 108.0
+margin_bottom = 24.0
+
+[node name="LineEdit" type="SpinBox" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 112.0
+margin_right = 262.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+margin_top = 110.0
+margin_right = 262.0
+margin_bottom = 114.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 118.0
+margin_right = 262.0
+margin_bottom = 138.0
+text = "ok"
+[connection signal="gui_input" from="VBoxContainer/Label" to="." method="_on_Label_gui_input"]
