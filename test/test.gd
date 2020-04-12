@@ -5,7 +5,7 @@ var class_truc = load("res://test/truc.gd")
 
 func _ready():
     print(typeof(Named))
-    test_from_resource()
+    test_from_schema()
 #    test_from_schema()
     
 

@@ -1,10 +1,9 @@
 #Générateur de formulaire
 
-plugin pour générer des formulaires, soit a partir d'un dictionnaire, d'un objet resource, ou a partir d'un schema json
-il y a aussi un mode edition pour rajouter ou supprimer des champs
+plugin pour générer des formulaires, soit à partir d'un dictionnaire, d'un objet resource, ou à partir d'un schema json
 
 
-pour la génération de formulaire a partir de donnée, les type de donnée supporté sont:
+pour la génération de formulaire à partir de données, les types de donnée supporté sont:
 - string
 - int
 - float
@@ -14,7 +13,7 @@ pour la génération de formulaire a partir de donnée, les type de donnée supp
 - dictionnary
 - array
 
-pour la génération de formulaire a partir de schéma, les types de donnée supporté sont:
+pour la génération de formulaire à partir de schéma, les types de donnée supporté sont:
 - string
 - number
 - integer
