@@ -24,7 +24,6 @@ margin_right = 284.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 130, 0 )
 max_value = 1e+12
-step = 1.0
 align = 2
 
 [node name="EditButton" type="Button" parent="."]

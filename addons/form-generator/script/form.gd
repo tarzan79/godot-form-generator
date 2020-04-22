@@ -27,7 +27,7 @@ func init(data):
         return false
     if !data.has("function"):
         print("il faut une fonction")
-        return false  
+        return false
     if data.has("editor"):
         _set_editor(data.editor)
     if data.has("name"):
@@ -59,7 +59,7 @@ func _get_data(node):
     var res = {}
     for n in node.get_children():
         if not n is Button:
-            res[n.label] = n.value    
+            res[n.label] = n.value
     return res
 
 func _reset_data(node):
@@ -67,7 +67,7 @@ func _reset_data(node):
     var res = {}
     for n in node.get_children():
         if not n is Button:
-            res[n.label] = ""   
+            res[n.label] = ""
     return res
     
 #string
@@ -103,7 +103,7 @@ func generator_from_data(node, data):
                 generator_from_data(f.get_node("VBoxContainer/VBoxContainer"), data[i])
             TYPE_ARRAY:
                 node.add_child(field.create_select(obj))#name, value
-            _: print("je connais pas ce truc") 
+            _: print("je connais pas ce truc")
 
 #string
 #number
@@ -134,33 +134,72 @@ func generator_from_schema(node, data):
 func generator_from_resource(node, data):
     print("generate from resource")
     form_data = []
-    for i in data.get_property_list():
-        
-        if i["usage"] >= PROPERTY_USAGE_SCRIPT_VARIABLE:
-            print(i)
-            var obj = {"label": i["name"], "value": data.get(i["name"]), "editor": is_editor}
-            match i["type"]:
-                TYPE_STRING:
-                    node.add_child(field.create_input(obj))#name, value
+    for prop in data.get_property_list():
+        if prop["usage"] >= PROPERTY_USAGE_SCRIPT_VARIABLE:
+            var obj = {
+                "label": prop["name"], 
+                "value": data.get(prop["name"]), 
+                "type": prop["type"],
+                "hint": prop["hint"],
+                "hint_string": prop["hint_string"],
+                "editor": is_editor
+                }
+            match prop["type"]:
+                TYPE_BOOL:
+                    node.add_child(field.create_checkbutton(obj))
                 TYPE_INT:
-                    node.add_child(field.create_number(obj))#name, value
+                    match prop["hint"]:
+                        3:
+                            node.add_child(field.create_select(obj))
+                        _:
+                            node.add_child(field.create_number(obj))
                 TYPE_REAL:
                     obj["rounded"] = false
-                    node.add_child(field.create_number(obj))#name, value
-                TYPE_COLOR:
-                    node.add_child(field.create_color(obj))#name, value
-                    pass
+                    node.add_child(field.create_number(obj))
+                TYPE_STRING:
+                    match prop["hint"]:
+                        PROPERTY_HINT_ENUM:
+                            print("create_select 1")
+                            node.add_child(field.create_select(obj))#name, value
+                        PROPERTY_HINT_FILE:
+                            node.add_child(field.create_file(obj))
+                        PROPERTY_HINT_DIR:
+                            node.add_child(field.create_file(obj))
+                        PROPERTY_HINT_MULTILINE_TEXT:
+                            node.add_child(field.create_multiline(obj))
                 TYPE_VECTOR2:
-                    node.add_child(field.create_vector2(obj))#name, value
+                    node.add_child(field.create_vector2(obj))
                 TYPE_VECTOR3:
-                    node.add_child(field.create_vector3(obj))#name, value
-                TYPE_DICTIONARY:
-                    var f = field.create_fieldset(obj)
-                    node.add_child(f)#name, value
-                    generator_from_data(f.get_node("VBoxContainer/VBoxContainer"), data[i])
-                TYPE_ARRAY:
-                    node.add_child(field.create_select(obj))#name, value
-                _: print("je connais pas ce truc")         
+                    node.add_child(field.create_vector3(obj))
+                TYPE_COLOR:
+                    node.add_child(field.create_color(obj))
+#                TYPE_DICTIONARY:
+#                    var f = field.create_fieldset(obj)
+#                    node.add_child(f)
+#                    generator_from_data(f.get_node("VBoxContainer/VBoxContainer"), data[prop])
+                TYPE_RECT2:
+                    pass
+                TYPE_NODE_PATH:
+                    pass
+#                TYPE_ARRAY:
+#                    var f = field.create_fieldset(obj)
+#                    node.add_child(f)
+#                    generator_from_data(f.get_node("VBoxContainer/VBoxContainer"), data[prop])
+#                TYPE_INT_ARRAY:
+#                    pass
+#                TYPE_REAL_ARRAY:
+#                    pass
+#                TYPE_STRING_ARRAY:
+#                    pass
+#                TYPE_VECTOR2_ARRAY:
+#                    pass
+#                TYPE_VECTOR3_ARRAY:
+#                    pass
+#                TYPE_COLOR_ARRAY:
+#                    pass
+#                TYPE_INT_ARRAY:
+#                    pass
+                _: print("je connais pas ce truc")
 
 func _set_editor(value):
     is_editor = value

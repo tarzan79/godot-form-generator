@@ -9,6 +9,8 @@ func init(data):
         $Label.text = data.label
     if data.has("value"):
         $ColorPickerButton.color = data.value
+    if data.has("hint") && data.hint == PROPERTY_HINT_COLOR_NO_ALPHA:
+        $ColorPickerButton.edit_alpha = false
 
 
 func _on_ColorPickerButton_color_changed(color):

@@ -4,10 +4,6 @@
 [ext_resource path="res://addons/form-generator/theme/y.png" type="Texture" id=2]
 [ext_resource path="res://addons/form-generator/script/field/vector2.gd" type="Script" id=3]
 
-
-
-
-
 [node name="VBoxContainer" type="HBoxContainer"]
 margin_right = 304.0
 margin_bottom = 54.0
@@ -17,9 +13,9 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_top = 20.0
+margin_top = 34.0
 margin_right = 150.0
-margin_bottom = 34.0
+margin_bottom = 48.0
 rect_min_size = Vector2( 150, 0 )
 text = "vector2"
 valign = 3
@@ -27,7 +23,7 @@ valign = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 154.0
 margin_right = 354.0
-margin_bottom = 54.0
+margin_bottom = 82.0
 
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
 margin_right = 200.0

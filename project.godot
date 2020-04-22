@@ -14,20 +14,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/form-generator/script/field/input.gd"
 }, {
+"base": "HBoxContainer",
+"class": "FieldMultiline",
+"language": "GDScript",
+"path": "res://addons/form-generator/script/field/multiline.gd"
+}, {
 "base": "PanelContainer",
 "class": "Form",
 "language": "GDScript",
 "path": "res://addons/form-generator/script/form.gd"
-}, {
-"base": "Reference",
-"class": "Truc",
-"language": "GDScript",
-"path": "res://test/truc.gd"
 } ]
 _global_script_class_icons={
 "FieldInput": "",
-"Form": "",
-"Truc": ""
+"FieldMultiline": "",
+"Form": ""
 }
 
 [application]
@@ -38,7 +38,13 @@ config/icon="res://icon.png"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "form-generator" )
+enabled=PoolStringArray( "form-generator", "notes_tab" )
+
+[importer_defaults]
+
+image={
+
+}
 
 [rendering]
 

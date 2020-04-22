@@ -2,7 +2,6 @@
 
 [ext_resource path="res://addons/form-generator/script/field/colorPicker.gd" type="Script" id=1]
 
-
 [node name="HBoxContainer" type="HBoxContainer"]
 margin_right = 333.0
 margin_bottom = 20.0

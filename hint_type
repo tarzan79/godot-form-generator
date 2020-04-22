@@ -1,0 +1,32 @@
+
+=== object or dictionary ===
+{class_name:Texture, hint:17, hint_string:Texture, name:character_face, type:17, usage:8199}		file
+{class_name:PackedScene, hint:17, hint_string:PackedScene, name:scene_file, type:17, usage:8199}	file
+{class_name:Resource, hint:17, hint_string:Resource, name:resource, type:17, usage:8199}		file
+
+=== color ===
+{class_name:, hint:20, hint_string:, name:col, type:14, usage:8199}					colorpicker
+
+=== string ===
+{class_name:, hint:3, hint_string:Rebecca,Mary,Leah, name:character_name, type:4, usage:8199}		liste deroulante
+{class_name:, hint:13, hint_string:, name:f, type:4, usage:8199}					file
+{class_name:, hint:14, hint_string:, name:f2, type:4, usage:8199}					directory
+{class_name:, hint:13, hint_string:*.txt, name:f3, type:4, usage:8199}					file
+{class_name:, hint:18, hint_string:, name:text, type:4, usage:8199}					multiline
+
+=== entier ===
+{class_name:, hint:1, hint_string:0,20, name:i, type:2, usage:8199}					slidebar/spinbox
+{class_name:, hint:1, hint_string:-10,20, name:j, type:2, usage:8199}					slidebar/spinbox
+{class_name:, hint:0, hint_string:, name:number, type:2, usage:8199}					slidebar/spinbox
+{class_name:, hint:0, hint_string:, name:number2, type:2, usage:8199}					slidebar/spinbox
+{class_name:, hint:0, hint_string:, name:life_points, type:2, usage:8192}
+
+=== float ===
+{class_name:, hint:1, hint_string:-10,20,0.2, name:k, type:3, usage:8199}				slidebar/spinbox
+{class_name:, hint:2, hint_string:100,1000,20, name:l, type:3, usage:8199}				slidebar/spinbox
+{class_name:, hint:4, hint_string:, name:transition_speed, type:3, usage:8199}				slidebar/spinbox
+{class_name:, hint:0, hint_string:, name:damage, type:3, usage:8192}					slidebar/spinbox
+
+
+{class_name:, hint:0, hint_string:, name:motion, type:5, usage:8192}					vector
+

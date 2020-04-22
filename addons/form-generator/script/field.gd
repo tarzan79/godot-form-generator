@@ -10,6 +10,7 @@ var ClassDate = load("res://addons/form-generator/scene/field/date.tscn")
 var ClassFile = load("res://addons/form-generator/scene/field/file.tscn")
 var ClassImage = load("res://addons/form-generator/scene/field/image.tscn")
 var ClassInput = load("res://addons/form-generator/scene/field/input.tscn")
+var ClassMultiline = load("res://addons/form-generator/scene/field/multiline.tscn")
 var ClassLabel = load("res://addons/form-generator/scene/label.tscn")
 var ClassLink = load("res://addons/form-generator/scene/link.tscn")
 var ClassSelect = load("res://addons/form-generator/scene/field/select.tscn")
@@ -17,13 +18,24 @@ var ClassNumber = load("res://addons/form-generator/scene/field/number.tscn")
 var ClassFieldset = load("res://addons/form-generator/scene/fieldset.tscn")
 var ClassVector2 = load("res://addons/form-generator/scene/field/vector2.tscn")
 var ClassVector3 = load("res://addons/form-generator/scene/field/vector3.tscn")
+var ClassCheckButton = load("res://addons/form-generator/scene/field/checkbutton.tscn")
 
 func _init():
     pass
+    
+func create_checkbutton(data):
+    var field = ClassCheckButton.instance()
+    field.init(data)
+    return field
 
 #text, url, tel, password, email
 func create_input(data):
     var field = ClassInput.instance()
+    field.init(data)
+    return field
+    
+func create_multiline(data):
+    var field = ClassMultiline.instance()
     field.init(data)
     return field
     
@@ -33,11 +45,12 @@ func create_number(data):
     return field
     
 #checkbox, radio
-func create_checkbox():
+func create_checkbox(data):
     pass
     
 #option (list)
 func create_select(data):
+    print("create_select 2")
     var field = ClassSelect.instance()
     field.init(data)
     return field
@@ -48,11 +61,11 @@ func create_color(data):
     field.init(data)
     return field
     
-func create_label():
+func create_label(data):
     pass
     
 #clickable link    
-func create_link():
+func create_link(data):
     pass
     
 #button, reset, submit
@@ -62,13 +75,15 @@ func create_button(data):
     return field
 
 #file
-func create_file():
+func create_file(data):
+    var field = ClassFile.instance()
+    field.init(data)
+    return field
+    
+func create_date(data):
     pass
     
-func create_date():
-    pass
-    
-func create_image():
+func create_image(data):
     pass
 
 func create_fieldset(data):

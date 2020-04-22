@@ -1,13 +1,20 @@
 extends Node
 
 enum Named {THING_1, THING_2, ANOTHER_THING = -1}
-var class_truc = load("res://test/truc.gd")
+var class_resource_exemple = load("res://test/resource_exemple.gd")
+
+export(Rect2) var truc: Rect2 
 
 func _ready():
-    print(typeof(Named))
-    test_from_schema()
-#    test_from_schema()
-    
+    print_hint_of_resource()
+    test_from_resource()
+
+func print_hint_of_resource():
+    var item = class_resource_exemple.new()
+    for property in item.get_property_list():
+        if property["usage"] >= PROPERTY_USAGE_SCRIPT_VARIABLE: # if property is
+            print(property)
+
 
 func submit(data):
     print(data)
@@ -155,7 +162,7 @@ func test_from_data():
 func test_from_resource():
     var formulaire = Form.new()
     add_child(formulaire)
-    var item = class_truc.new(1)
+    var item = class_resource_exemple.new()
     formulaire.init({
         "name": "un joli formulaire",
         "node": self, #where generate the form

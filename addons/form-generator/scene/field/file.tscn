@@ -2,8 +2,6 @@
 
 [ext_resource path="res://addons/form-generator/script/field/file.gd" type="Script" id=1]
 
-
-
 [node name="HBoxContainer" type="HBoxContainer"]
 margin_right = 74.0
 margin_bottom = 24.0
@@ -12,22 +10,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="."]
+margin_top = 5.0
+margin_right = 150.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 150, 0 )
+text = "fichier: "
+
 [node name="LineEdit" type="LineEdit" parent="."]
-margin_right = 180.0
+margin_left = 154.0
+margin_right = 334.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 180, 0 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = 184.0
-margin_right = 216.0
+margin_left = 338.0
+margin_right = 370.0
 margin_bottom = 24.0
 text = "file"
 
 [node name="FileDialog" type="FileDialog" parent="."]
-margin_left = 62.0
-margin_right = 562.0
-margin_bottom = 400.0
+margin_left = 374.0
+margin_right = 606.0
+margin_bottom = 130.0
 window_title = "Ouvrir un fichier"
+resizable = true
 mode = 0
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]

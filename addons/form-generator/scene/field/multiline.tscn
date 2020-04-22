@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/form-generator/script/field/multiline.gd" type="Script" id=1]
+
+[node name="Control" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -832.0
+margin_bottom = -550.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 33.0
+margin_right = 150.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 154.0
+margin_right = 354.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 200, 80 )
+wrap_enabled = true

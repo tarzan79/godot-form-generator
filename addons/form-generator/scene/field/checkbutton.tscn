@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://addons/form-generator/script/field/checkbox.gd" type="Script" id=1]
+[ext_resource path="res://addons/form-generator/script/field/checkbutton.gd" type="Script" id=1]
 
 [node name="HBoxContainer" type="HBoxContainer"]
 margin_right = 40.0
@@ -12,14 +12,11 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="."]
 margin_top = 13.0
-margin_right = 98.0
+margin_right = 150.0
 margin_bottom = 27.0
-text = "Nom du champ"
+rect_min_size = Vector2( 150, 0 )
 
-[node name="CheckBox" type="CheckBox" parent="."]
-margin_left = 102.0
-margin_right = 126.0
+[node name="CheckButton" type="CheckButton" parent="."]
+margin_left = 154.0
+margin_right = 230.0
 margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}

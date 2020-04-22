@@ -50,6 +50,7 @@ func init(data):
             pass
     if data.has("editor"):
         _set_editor(data.editor)
+
         
 
 func validate(data):
